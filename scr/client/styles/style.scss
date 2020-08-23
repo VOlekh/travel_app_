@@ -1,0 +1,175 @@
+body {
+	background: #fffff8;
+	font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+	margin: 0;
+	background: #AC4261;
+	color: #f0d43a;
+	text-align: left;
+	text-align: center;
+}
+#app {
+	display: grid;
+	grid-auto-rows: minmax(150px, auto);
+	justify-content: center;
+	grid-gap: 1em;
+	font-size: 20px;
+	font-family: 'Oswald', sans-serif;
+	grid-template-columns: 35% 60%;
+	justify-content: center;
+	grid-template-areas: "middle middle middle";
+}
+.holder {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+.entry {
+	background: rgba(59, 74, 107, .4);
+	margin-top: 3vh;
+	grid-area: middle;
+}
+.title {
+	text-align: center;
+	font-size: 25px;
+}
+#entryHolder {
+	padding-left: 10px;
+}
+#date {
+}
+#temp {
+}
+#content {
+}
+#generate {
+	color: #f0d43a;
+	margin-top: 2vh;
+	width: 100%;
+	&:hover {
+		background-color: #f0d43a;
+		color: #AC4361;
+	}
+}
+.header {
+	padding: 0.5 em;
+}
+.headline {
+	background-color: #3b4a6b;
+	color: #f0d43a;
+	text-align: center;
+	font-size: 3em;
+	padding: 0.5em;
+	font-size: 3em;
+}
+.zip {
+	padding: 10px;
+	width: 100%;
+	margin-top: 2vh;
+	grid-area: middle;
+}
+#zip {
+	margin-top: 2vh;
+	font-style: italic;
+	padding-left: 10px;
+	width: 90%;
+}
+.feel {
+	margin-top: 5vh;
+	grid-area: middle;
+}
+#feelings {
+	font-style: italic;
+	padding-left: 10px;
+}
+.banner {
+	width: 110%;
+	height: 50vh;
+	background-image: url("../img/banner.jpg");
+	background-size: cover;
+	background-position: left;
+	background-position: no-repeat;
+}
+.h2-text {
+	font-size: 45px;
+	color: #fff;
+	text-align: left;
+	line-height: 50px;
+	font-style: italic;
+}
+label {
+	display: block;
+	font-size: 27px;
+}
+input {
+	display: block;
+	height: 60px;
+	width: 320px;
+	background: #22b2da;
+	color: #f0d43a;
+	font-size: 20px;
+	font-family: 'Oswald', sans-serif;
+	border: none;
+}
+.myInput {
+	height: 15vh;
+	margin-top: 1vh;
+}
+button {
+	width: 400px;
+	height: 100px;
+	background: #3b4a6b;
+	color: #f0d43a;
+	font-size: 26px;
+	font-family: 'Oswald', sans-serif;
+	border: none;
+	box-shadow: 2px 4px 5px #444;
+}
+h1 {
+	font-size: 36px;
+}
+textarea {
+	background: #22b2da;
+	color: #f0d43a;
+	font-size: 20px;
+	font-family: 'Oswald', sans-serif;
+}
+p {
+	margin: 20px;
+}
+.wrapper-footer-menu {
+	grid-area: "men";
+	display: flex;
+	width: 1000px;
+	flex-direction: column;
+	align-items: left;
+	align-items: flex-start;
+	margin: 40px;
+	input: focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+::placeholder {
+	color: #f0d43a;
+	font-family: 'Oswald', sans-serif;
+}
+:-ms-input-placeholder {
+	color: #f0d43a;
+	font-family: 'Oswald', sans-serif;
+}
+::-ms-input-placeholder {
+	color: #f0d43a;
+	font-family: 'Oswald', sans-serif;
+}
+@media {
+	(min-width {
+		&: {
+			900px) {
+				.wrapper-footer-menu {
+      display: flex;
+				flex-direction: row;
+			}
+		}
+	}
+}
