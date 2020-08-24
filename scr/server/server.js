@@ -18,6 +18,10 @@ const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+//update your server js to access the dist folder
+const app = express()
+app.use(express.static('dist'));
+
 // Cors for cross origin allowance
 //The instance of the app should be setup to use cors()
 const cors = require("cors");
@@ -25,7 +29,7 @@ app.use(cors());
 
 //NOT AS IT IS NOW The Express app instance should be pointed to the project folder with .html, .css, and .js files.
 // Initialize the main project folder
-app.use(express.static("website"));
+//app.use(express.static("website"));
 
 // Spin up the server
 //Local server should be running and producing feedback to the Command Line
