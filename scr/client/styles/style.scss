@@ -84,7 +84,6 @@ body {
 .banner {
 	width: 110%;
 	height: 50vh;
-	background-image: url("../img/banner.jpg");
 	background-size: cover;
 	background-position: left;
 	background-position: no-repeat;
@@ -144,7 +143,7 @@ p {
 	align-items: left;
 	align-items: flex-start;
 	margin: 40px;
-	input: focus,
+	//input: focus,
 select:focus,
 textarea:focus,
 button:focus {
@@ -162,14 +161,14 @@ button:focus {
 	color: #f0d43a;
 	font-family: 'Oswald', sans-serif;
 }
-@media {
-	(min-width {
-		&: {
-			900px) {
-				.wrapper-footer-menu {
-      display: flex;
-				flex-direction: row;
-			}
-		}
-	}
+//@media {
+//	(min-width {
+//		&: {
+//			900px) {
+//				.wrapper-footer-menu {
+//      display: flex;
+//				flex-direction: row;
+//			}
+//		}
+//	}
 }
