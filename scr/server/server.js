@@ -3,13 +3,20 @@ projectData = {};
 
 // Require Express to run server and routes
 //The project file server.js should require express()
-const express = require("express");
+//const express = require("express");
+//NOT DEFINED The Express app instance should be pointed to the project folder with .html, .css, and .js files.
 
 // Start up an instance of app
 //The project file server.js should create an instance of their app using express.
+//update your server js to access the dist folder
 const app = express();
+app.use(express.static('dist'));
+console.log(__dirname)
 
-//NOT DEFINED The Express app instance should be pointed to the project folder with .html, .css, and .js files.
+app.get('/', function (req, res) {
+     res.sendFile('dist/index.html')
+     res.sendFile(path.resolve('src/client/views/index.html'))
+})
 
 /* Middleware*/
 //The body-parser package should be installed and included in the project.
@@ -18,9 +25,6 @@ const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-//update your server js to access the dist folder
-const app = express()
-app.use(express.static('dist'));
 
 // Cors for cross origin allowance
 //The instance of the app should be setup to use cors()
@@ -34,12 +38,14 @@ app.use(cors());
 // Spin up the server
 //Local server should be running and producing feedback to the Command Line
 
-const port = 8000;
+const port = 8080;
 const server = app.listen(port, listening);
 function listening() {
   console.log("server running");
   console.log(`running on localhost: ${port}`);
 }
+
+
 // After that test your server by typing in terminal node starter.js
 
 // Callback to debug
