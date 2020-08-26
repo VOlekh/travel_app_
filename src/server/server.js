@@ -3,7 +3,7 @@ projectData = {};
 
 // Require Express to run server and routes
 //The project file server.js should require express()
-//const express = require("express");
+const express = require("express");
 //NOT DEFINED The Express app instance should be pointed to the project folder with .html, .css, and .js files.
 
 // Start up an instance of app
