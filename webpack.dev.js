@@ -19,5 +19,11 @@ module.exports = {
                 use: [ 'style-loader', 'css-loader', 'sass-loader' ]
             }
         ]
-    }
+    },
+    plugins: [
+        new HtmlWebPackPlugin({
+            template: "./src/client/views/index.html",
+            filename: "./index.html"
+        })
+    ],  
 }
