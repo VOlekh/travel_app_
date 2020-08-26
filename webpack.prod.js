@@ -5,7 +5,7 @@ const MiniCSSExtractPlugin = require("mini-css-extract-plugin")
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
-    entry: './scr/client/index.js',
+    entry: './src/client/index.js',
 
     module: {
         rules: [
@@ -19,5 +19,11 @@ module.exports = {
                 use: [ 'style-loader', 'css-loader', 'sass-loader' ]
             }
         ]
-    }
+    },
+    plugins: [
+        new HtmlWebPackPlugin({
+            template: "./src/client/views/index.html",
+            filename: "./index.html"
+        })
+    ],  
 }
