@@ -14,8 +14,8 @@ app.use(express.static('dist'));
 console.log(__dirname)
 
 app.get('/', function (req, res) {
-     res.sendFile('dist/index.html')
-     res.sendFile(path.resolve('src/client/views/index.html'))
+  console.log("Hello!")
+  res.sendFile('dist/index.html')
 })
 
 /* Middleware*/
@@ -64,8 +64,8 @@ app.post("/weather", function (request, response) {
 
 // Initialize all route with a callback function
 // Callback function to complete GET '/all'
-app.get("/all", sendData);
+// app.get("/all", sendData);
 
-function sendData(request, response) {
-  response.send(projectData);
-}
+// function sendData(request, response) {
+//   response.send(projectData);
+// }
