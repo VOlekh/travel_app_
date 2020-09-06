@@ -1,10 +1,10 @@
 // Function called by event listener (named call back function)
-async function performAction(e) {
-    const newZip = document.getElementById("zip").value;
+async function performActionGeonames(e) {
+    const newZip = document.getElementById("city").value;
     const countryCode = "de";
   
     /* Function to GET Web API Data*/
-    const data = await getData(baseURL, newZip, countryCode, apiKey);
+    const data = await getDataGeonames(baseURLGeonames, countryCode, newCity, apiGeonamesUsername);
   
     console.log(data);
   
@@ -13,7 +13,7 @@ async function performAction(e) {
     let newDate = d.getMonth() + "." + d.getDate() + "." + d.getFullYear();
     const feelings = document.getElementById("feelings").value;
   
-    await postData("http://localhost:8000/weather", {
+    await postDataGeonames("http://localhost:8000/weather", {
       temperature: temp,
       date: newDate,
       feelings: feelings,
@@ -21,12 +21,12 @@ async function performAction(e) {
     await updateUI();
   }
 
-  async function performAction(e) {
-    const newZip = document.getElementById("zip").value;
+  async function performActionGeonames(e) {
+    const newCity = document.getElementById("city").value;
     const countryCode = "de";
   
     /* Function to GET Web API Data*/
-    const data = await getData(baseURL, newZip, countryCode, apiKey);
+    const data = await getDataGeonames(baseURLGeonames, countryCode, newCity, apiGeonamesUsername);
   
     console.log(data);
   
@@ -35,7 +35,7 @@ async function performAction(e) {
     let newDate = d.getMonth() + "." + d.getDate() + "." + d.getFullYear();
     const feelings = document.getElementById("feelings").value;
   
-    await postData("http://localhost:8000/weather", {
+    await postDataGeonames("http://localhost:8000/weather", {
       temperature: temp,
       date: newDate,
       feelings: feelings,
