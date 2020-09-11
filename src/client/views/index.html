@@ -2,51 +2,70 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Weather Journal</title>
+    <title>Travel app</title>
     <link
       href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./src/client/styles/style.scss" />
+    <!-- <link rel="stylesheet" href="./src/client/styles/style.scss" /> -->
   </head>
 
   <body>
     <div class="container">
       <header class="header">
         <div class="holder headline">
-          Weather Journal App
+          Travel app
+        </div>
+        <div>
+          <nav class="navbar__menu">
+            <!-- Navigation starts as empty UL that will be populated with JS -->
+            <ul id="navbar__list">
+              <li><a class="menu__link" id="nav_section1" href="#section1">Link 1</a></li>
+              <li><a class="menu__link" id="nav_section2" href="#section2">Link 2</a></li>
+              <li><a class="menu__link" id="nav_section3" href="#section3">Link 3</a></li>
+              <li><a class="menu__link" id="nav_section4" href="#section3">Link 4</a></li>
+            </ul>      
+          </nav>
         </div>
       </header>
 
       <main>
         <div class="banner">
           <div class="banner-text">
+            <!--https://support.litmos.com/hc/en-us/articles/115001428953-Sample-HTML-Banner-code-->
+            <div class="w3-content">
+              <img class="mySlides" src="https://static.wixstatic.com/media/d9520aafca774fbeb056dc8d62085362.jpg/v1/fill/w_1192,h_575,al_c,q_85,usm_0.66_1.00_0.01/d9520aafca774fbeb056dc8d62085362.jpg" alt="custom_html_banner1" style="height: 575px; width: 980px;">
+              <img class="mySlides" src="https://static.wixstatic.com/media/11062b_a710aa3c2bed4f3db510679c41809414~mv2.jpeg/v1/fill/w_1001,h_667,al_c,q_85,usm_0.66_1.00_0.01/11062b_a710aa3c2bed4f3db510679c41809414~mv2.jpeg" alt="custom_html_banner2" style="height: 575px; width: 980px;">
+              <img class="mySlides" src="https://static.wixstatic.com/media/11062b_ef215f990d8f494eb34b570e2112d231~mv2.jpeg/v1/fill/w_1001,h_667,al_c,q_85,usm_0.66_1.00_0.01/11062b_ef215f990d8f494eb34b570e2112d231~mv2.jpeg" alt="custom_html_banner3" style="height: 575px; width: 980px;">  
+              <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+              <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+             </div>
           </div>
         </div>
 
-        <div id="app">
+        <!-- <div id="app">
           <div class="holder zip">
             <label for="zip">Enter Zipcode here</label>
             <input type="text" id="zip" placeholder="Enter zip code here" />
-          </div>
+          </div> -->
 
           <div id="app">
-            <div class="holder city">
-              <label for="city">Enter city here</label>
-              <input type="text" id="city" placeholder="Enter city here" />
+            <div class="holder from_city">
+              <label for="from_city">Enter departure city here</label>
+              <input type="text" id="from_city" placeholder="From" />
             </div>
 
-          <div class="holder feel">
-            <label for="feelings"> How are you feeling today?</label>
-            <textarea
-              class="myInput"
-              id="feelings"
-              placeholder="Enter your feelings here"
-              rows="9"
-              cols="50"
-            ></textarea>
-            <button id="generate" type="submit">Generate</button>
-          </div>
+          <div id="app">
+            <div class="holder to_city">
+              <label for="to_city">Enter destination city here</label>
+              <input type="text" id="to_city" placeholder="To" />
+            </div>
+          
+          <div id="app">
+            <div class="holder departure_date">
+              <label for="departure_date">Enter trip date here</label>
+              <input type="text" id="departure_date" placeholder="Date" />
+            </div>               
 
           <div class="holder entry">
             <div class="title">Most Recent Entry</div>
@@ -78,7 +97,20 @@
 
         <p><br />Copyright Valentina Olekhnovich® 2020</p>
       </footer>
-      <script src='./src/client/index.js' type="text/javascript"></script>
     </div>
   </body>
+   <!--https://support.litmos.com/hc/en-us/articles/115001428953-Sample-HTML-Banner-code-->
+  <script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+    function plusDivs(n) {
+    showDivs(slideIndex += n);
+     }
+    function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    if (n > x.length) {slideIndex = 1} if (n < 1) {slideIndex = x.length}for
+    (i = 0; i < x.length; i++) {x[i].style.display = "none";}
+    x[slideIndex-1].style.display = "block"; }
+   </script>
 </html>

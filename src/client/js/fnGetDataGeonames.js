@@ -1,7 +1,8 @@
 //Function to get Data from the server. Works with Geomames api
 const getDataGeonames = async (baseURLGeonames, countryCode, newCity, apiGeonamesUsername) => {
     //Build url according to API call
-    const requestUriGeonames = `${baseURLGeonames}, country=${countryCode},&q=${newCity},&username=${apiGeonamesUsername}`;
+    const requestUriGeonames = `${baseURLGeonames}country=${countryCode}&q=${newCity}&username=${apiGeonamesUsername}`;
+    console.log(requestUriGeonames);
    //Receive response from Geomames API
    const response = await fetch(requestUriGeonames);
    try {
