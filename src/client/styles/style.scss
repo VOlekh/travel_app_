@@ -3,8 +3,7 @@ body {
 	font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 	margin: 0;
 	background: #AC4261;
-	color: #f0d43a;
-	text-align: left;
+	color: #2b2923;
 	text-align: center;
 }
 #app {
@@ -41,19 +40,39 @@ body {
 }
 #content {
 }
-#generate {
-	color: #f0d43a;
-	margin-top: 2vh;
-	width: 100%;
-	&:hover {
-		background-color: #f0d43a;
-		color: #AC4361;
-	}
-}
+
 .header {
 	padding: 0.5 em;
 	text-transform: uppercase;
 }
+section {
+	position: relative;
+	min-height: 70vh;
+
+  }
+#section2 {
+	background-color: white;
+  }
+#section4 {
+	background-color: white;
+  }
+
+/*Section 3 formatting*/
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+}
+/* Responsive layout */
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+/*--------------------*/
+
 
 /* Navigation Styles*/
 
@@ -92,26 +111,7 @@ body {
 	padding: 0.5em;
 	font-size: 3em;
 }
-.zip {
-	padding: 10px;
-	width: 100%;
-	margin-top: 2vh;
-	grid-area: middle;
-}
-#zip {
-	margin-top: 2vh;
-	font-style: italic;
-	padding-left: 10px;
-	width: 90%;
-}
 
-.banner {
-	width: 110%;
-	height: 50vh;
-	background-size: cover;
-	background-position: left;
-	background-position: no-repeat;
-}
 
 /* Slideshow container*/
 /*https://html5css.ru/howto/howto_js_slideshow.php*/
@@ -120,14 +120,17 @@ body {
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
+  max-width: 1700px;
   position: relative;
+  object-fit: cover;
   margin: auto;
 }
 
 /* Hide the images by default */
 .mySlides {
-    display: none;
+	display: none;
+	object-fit: cover;
+	height: 500px;
 }
 
 /* Next & previous buttons */
@@ -197,6 +200,10 @@ body {
 
 /* -------------------------*/
 
+h2{
+	text-transform: uppercase;
+	color: #fff;
+}
 
 .h2-text {
 	font-size: 45px;
@@ -205,40 +212,92 @@ body {
 	line-height: 50px;
 	font-style: italic;
 }
+
 label {
 	display: block;
 	font-size: 27px;
 }
+
+.label_format{
+	
+
+}
+/*Style rows and columns for input*/
+.row {
+	margin: 40px 0;
+}
+
+.left-column {
+	display: inline-block;
+	width: 20ex;
+	text-align: left;
+	padding: 30px;
+	
+}
+
+.right-column {
+	width: 40ex;
+	display: inline-block;
+}
+
+label {
+	display:flex;
+ }
+ 
+ label input {
+	margin-left:10px;
+ }
+
+/* Style inputs */
 input {
 	display: block;
 	height: 60px;
 	width: 320px;
 	background: #22b2da;
-	color: #f0d43a;
 	font-size: 20px;
 	font-family: 'Oswald', sans-serif;
 	border: none;
 }
-.myInput {
-	height: 15vh;
-	margin-top: 1vh;
+
+
+input[type=text], select, textarea {
+    width: 100%; 
+	padding: 12px;
+	margin-top: 6px; 
+    margin-bottom: 16px;
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box;
 }
-button {
-	width: 400px;
-	height: 100px;
-	background: #3b4a6b;
-	color: #f0d43a;
-	font-size: 26px;
-	font-family: 'Oswald', sans-serif;
-	border: none;
-	box-shadow: 2px 4px 5px #444;
+input[type=date]{
+    width: 100%; 
+	padding: 12px;
+	margin-top: 6px; 
+    margin-bottom: 16px;
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box;
 }
+
+input[type=generate] {
+    background-color: #126094;
+	margin-top: 60px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=generate]:hover {
+    background-color: #106877;
+}
+
 h1 {
 	font-size: 36px;
 }
 textarea {
 	background: #22b2da;
-	color: #f0d43a;
+
 	font-size: 20px;
 	font-family: 'Oswald', sans-serif;
 }
@@ -259,18 +318,8 @@ textarea:focus,
 button:focus {
     outline: none;
 }
-::placeholder {
-	color: #f0d43a;
-	font-family: 'Oswald', sans-serif;
 }
-:-ms-input-placeholder {
-	color: #f0d43a;
-	font-family: 'Oswald', sans-serif;
-}
-::-ms-input-placeholder {
-	color: #f0d43a;
-	font-family: 'Oswald', sans-serif;
-}
+
 //@media {
 //	(min-width {
 //		&: {
@@ -281,4 +330,30 @@ button:focus {
 //			}
 //		}
 //	}
-}
+
+/* https://www.w3schools.com/howto/howto_js_scroll_to_top.asp*/
+/* Style button that will take the user to the top of the page when clicked on*/
+
+
+
+#myBtn {
+	display: none; /* Hidden by default */
+	position: fixed; /* Fixed/sticky position */
+	bottom: 20px; /* Place the button at the bottom of the page */
+	right: 30px; /* Place the button 30px from the right */
+	z-index: 99; /* Make sure it does not overlap */
+	border: none; /* Remove borders */
+	outline: none; /* Remove outline */
+	background-color: rgb(80, 70, 70); /* Set a background color */
+	color: white; /* Text color */
+	cursor: pointer; /* Add a mouse pointer on hover */
+	padding: 25px; /* Some padding */
+	border-radius: 50px; /* Rounded corners */
+	font-size: 30px; /* Increase font size */
+	text-align: center;
+	box-shadow: 2px 4px 5px #444;
+  }
+  
+  #myBtn:hover {
+	background-color: rgb(22, 21, 21); /* Add a dark-grey background on hover */
+  }
