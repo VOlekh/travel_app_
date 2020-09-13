@@ -20,34 +20,85 @@
           <nav class="navbar__menu">
             <!-- Navigation starts as empty UL that will be populated with JS -->
             <ul id="navbar__list">
-              <li><a class="menu__link" id="nav_section1" href="#section1">Link 1</a></li>
-              <li><a class="menu__link" id="nav_section2" href="#section2">Link 2</a></li>
-              <li><a class="menu__link" id="nav_section3" href="#section3">Link 3</a></li>
-              <li><a class="menu__link" id="nav_section4" href="#section3">Link 4</a></li>
+              <li><a class="menu__link" id="nav_section1" href="#section1">Home</a></li>
+              <li><a class="menu__link" id="nav_section2" href="#section2">Plan your trip</a></li>
+              <li><a class="menu__link" id="nav_section3" href="#section3">I'm traveling to</a></li>
+              <li><a class="menu__link" id="nav_section4" href="#section3">My trip</a></li>
             </ul>      
           </nav>
         </div>
       </header>
 
       <main>
-        <div class="banner">
-          <div class="banner-text">
-            <!--https://support.litmos.com/hc/en-us/articles/115001428953-Sample-HTML-Banner-code-->
-            <div class="w3-content">
-              <img class="mySlides" src="https://static.wixstatic.com/media/d9520aafca774fbeb056dc8d62085362.jpg/v1/fill/w_1192,h_575,al_c,q_85,usm_0.66_1.00_0.01/d9520aafca774fbeb056dc8d62085362.jpg" alt="custom_html_banner1" style="height: 575px; width: 980px;">
-              <img class="mySlides" src="https://static.wixstatic.com/media/11062b_a710aa3c2bed4f3db510679c41809414~mv2.jpeg/v1/fill/w_1001,h_667,al_c,q_85,usm_0.66_1.00_0.01/11062b_a710aa3c2bed4f3db510679c41809414~mv2.jpeg" alt="custom_html_banner2" style="height: 575px; width: 980px;">
-              <img class="mySlides" src="https://static.wixstatic.com/media/11062b_ef215f990d8f494eb34b570e2112d231~mv2.jpeg/v1/fill/w_1001,h_667,al_c,q_85,usm_0.66_1.00_0.01/11062b_ef215f990d8f494eb34b570e2112d231~mv2.jpeg" alt="custom_html_banner3" style="height: 575px; width: 980px;">  
-              <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-              <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
-             </div>
-          </div>
-        </div>
+        <!-- Each Section has an ID (used for the anchor) and 
+        a data attribute that will populate the li node.
+        Adding more sections will automatically populate nav.
+        The first section is set to active class by default -->
+        <section id="section1" data-nav="Section 1">
+          <!-- Slideshow container -->
+           <!-- https://html5css.ru/howto/howto_js_slideshow.php-->
+          <div class="slideshow-container">
 
-        <!-- <div id="app">
-          <div class="holder zip">
-            <label for="zip">Enter Zipcode here</label>
-            <input type="text" id="zip" placeholder="Enter zip code here" />
-          </div> -->
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides fade">
+              <img src="https://static.wixstatic.com/media/d9520aafca774fbeb056dc8d62085362.jpg/v1/fill/w_1192,h_575,al_c,q_85,usm_0.66_1.00_0.01/d9520aafca774fbeb056dc8d62085362.jpg" style="width:100%; height: 500px;">
+            </div>
+
+            <div class="mySlides fade">
+              <img src="https://static.wixstatic.com/media/11062b_a710aa3c2bed4f3db510679c41809414~mv2.jpeg/v1/fill/w_1001,h_667,al_c,q_85,usm_0.66_1.00_0.01/11062b_a710aa3c2bed4f3db510679c41809414~mv2.jpeg" style="width:auto; height: 500px">
+            </div>
+
+            <div class="mySlides fade">
+              <img src="https://static.wixstatic.com/media/11062b_ef215f990d8f494eb34b570e2112d231~mv2.jpeg/v1/fill/w_1001,h_667,al_c,q_85,usm_0.66_1.00_0.01/11062b_ef215f990d8f494eb34b570e2112d231~mv2.jpeg" style="width:100%; height: 500px">
+            </div>
+
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+          <br>
+
+          <!-- The dots/circles -->
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+          </div>
+
+        </section>
+        <section id="section2" data-nav="Section 2">
+          <div class="landing__container">
+            <h2>Plan your trip</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum metus faucibus lectus pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie semper in tellus. Sed congue et odio sed euismod.</p>
+    
+            <p>Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.</p>
+          </div>
+        </section>
+        <section id="section3" data-nav="Section 3">
+          <div class="landing__container">
+            <h2>Section 3</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum metus faucibus lectus pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie semper in tellus. Sed congue et odio sed euismod.</p>
+    
+            <p>Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.</p>
+          </div>
+        </section>
+        <section id="section4" data-nav="Section 4">
+          <div class="landing__container">
+            <h2>Section 4</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum metus faucibus lectus pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie semper in tellus. Sed congue et odio sed euismod.</p>
+    
+            <p>Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.</p>
+          </div>
+        </section>
+        <!-- Create a button that will take the user to the top of the page when clicked on -->
+        <button  class="fa fa-home" onclick="topFunction()" id="myBtn" title="Go to top"></i></button>
+      </main>
+
+
+
+
+      <main>
+
 
           <div id="app">
             <div class="holder from_city">
@@ -99,18 +150,56 @@
       </footer>
     </div>
   </body>
-   <!--https://support.litmos.com/hc/en-us/articles/115001428953-Sample-HTML-Banner-code-->
+   <!-- Style banner with next previous buttons  https://html5css.ru/howto/howto_js_slideshow.php-->
   <script>
     var slideIndex = 1;
-    showDivs(slideIndex);
-    function plusDivs(n) {
-    showDivs(slideIndex += n);
-     }
-    function showDivs(n) {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    if (n > x.length) {slideIndex = 1} if (n < 1) {slideIndex = x.length}for
-    (i = 0; i < x.length; i++) {x[i].style.display = "none";}
-    x[slideIndex-1].style.display = "block"; }
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+    }
+    
+  
+  </script>
+<!-- Slideshow  https://html5css.ru/howto/howto_js_slideshow.php-->
+  <script>
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        slides[slideIndex-1].style.display = "block";
+        setTimeout(showSlides, 10000); // Change image every 10 seconds
+    }
    </script>
+   <!-- Link JS -->
+  <script src="js/app.js"></script>
 </html>

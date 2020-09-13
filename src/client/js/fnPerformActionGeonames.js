@@ -16,7 +16,6 @@ async function performActionGeonames(e) {
     await postData("http://localhost:8000/weather", {
       temperature: temp,
       date: newDate,
-     
     });
     await updateUI();
   }

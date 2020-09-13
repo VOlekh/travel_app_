@@ -113,71 +113,89 @@ body {
 	background-position: no-repeat;
 }
 
-/*Banner styling*/
+/* Slideshow container*/
+/*https://html5css.ru/howto/howto_js_slideshow.php*/
 
-.w3-content {
-	position: relative;
-	margin-top: 0em;
-  }
-  
-  .w3-btn, .w3-button {
-	border: none;
-	display: inline-block;
-	outline: 0;
-	padding: 8px 16px;
-	vertical-align: center;
-	overflow: hidden;
-	text-decoration: none;
-	color: inherit;
-	background-color: inherit;
-	text-align: center;
-	cursor: pointer;
-	white-space: nowrap;
-  }
-  
-  .w3-btn, .w3-button {
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-  }
-  
-  .w3-disabled, .w3-btn:disabled, .w3-button:disabled {
-	cursor: not-allowed;
-	opacity: 0.3;
-  }
-  
-  .w3-disabled *, :disabled * {
-	pointer-events: none;
-  }
-  
-  .w3-bar-block {
-	.w3-dropdown-hover .w3-button, .w3-dropdown-click .w3-button {
-	  width: 100%;
-	  text-align: left;
-	  padding: 8px 16px;
-	}
-  }
-  
-  .w3-button:hover {
-	color: #000 !important;
-	background-color: #ccc !important;
-  }
-  
-  .w3-content button {
-	position: absolute;
-	top: 37%;
-  }
-  
-  .w3-display-right {
-	right: 0;
-  }
-  
-  .w3-display-left {
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev {
 	left: 0;
-  }
+	border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* -------------------------*/
 
 
 .h2-text {
