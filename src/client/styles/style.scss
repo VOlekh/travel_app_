@@ -1,7 +1,7 @@
 body {
 	background: #fffff8;
 	font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-	margin: 0;
+	margin: auto;
 	background: #AC4261;
 	color: #2b2923;
 	text-align: center;
@@ -202,51 +202,51 @@ section {
 
 h2{
 	text-transform: uppercase;
-	color: #fff;
+	color: rgb(53, 47, 47);
+	padding: 60px 40px 40px 40px;
+	margin: 0;
 }
 
 .h2-text {
 	font-size: 45px;
-	color: #fff;
+	color: rgb(53, 47, 47);
 	text-align: left;
 	line-height: 50px;
 	font-style: italic;
 }
 
-label {
-	display: block;
-	font-size: 27px;
-}
-
-.label_format{
-	
-
+.hiw_conteiner{
+	padding: 60px 40px 40px 40px;;
 }
 /*Style rows and columns for input*/
-.row {
-	margin: 40px 0;
-}
+
 
 .left-column {
 	display: inline-block;
 	width: 20ex;
 	text-align: left;
-	padding: 30px;
-	
+	padding: 30px 30px 0px 30px;
+	margin: 15px 15px 0px 15px;
 }
 
 .right-column {
 	width: 40ex;
 	display: inline-block;
+	margin: 15px 15px 0px 15px;
 }
 
 label {
 	display:flex;
- }
+	display: block;
+	font-size: 27px;
+	color: white;
+}
  
- label input {
+label input {
 	margin-left:10px;
- }
+}
+
+
 
 /* Style inputs */
 input {
@@ -267,16 +267,8 @@ input[type=text], select, textarea {
     margin-bottom: 16px;
     border: 1px solid #ccc; 
     border-radius: 4px; 
-    box-sizing: border-box;
-}
-input[type=date]{
-    width: 100%; 
-	padding: 12px;
-	margin-top: 6px; 
-    margin-bottom: 16px;
-    border: 1px solid #ccc; 
-    border-radius: 4px; 
-    box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: 'Oswald', sans-serif;
 }
 
 input[type=generate] {
@@ -285,19 +277,31 @@ input[type=generate] {
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
-    cursor: pointer;
+	cursor: pointer;
+	text-align: center;
+	width: 100%;
+	color: white;
+	font-family: 'Oswald', sans-serif;
 }
 
 input[type=generate]:hover {
     background-color: #106877;
 }
+input[type="text"]::-webkit-input-placeholder {
+    color: #ccc;
+} 
+input[type="text"]::-moz-placeholder {
+    color: #ccc;
+}
+
+/*-------------*/
+
 
 h1 {
 	font-size: 36px;
 }
 textarea {
 	background: #22b2da;
-
 	font-size: 20px;
 	font-family: 'Oswald', sans-serif;
 }
@@ -312,7 +316,6 @@ p {
 	align-items: left;
 	align-items: flex-start;
 	margin: 40px;
-	//input: focus,
 select:focus,
 textarea:focus,
 button:focus {
@@ -320,21 +323,9 @@ button:focus {
 }
 }
 
-//@media {
-//	(min-width {
-//		&: {
-//			900px) {
-//				.wrapper-footer-menu {
-//      display: flex;
-//				flex-direction: row;
-//			}
-//		}
-//	}
 
 /* https://www.w3schools.com/howto/howto_js_scroll_to_top.asp*/
 /* Style button that will take the user to the top of the page when clicked on*/
-
-
 
 #myBtn {
 	display: none; /* Hidden by default */
