@@ -20,7 +20,7 @@
         </div>
         <div>
           <nav class="navbar__menu">
-            <!-- Navigation starts as empty UL that will be populated with JS -->
+            <!-- Navigation -->
             <ul id="navbar__list">
               <li><a class="menu__link" id="nav_section1" href="#section1">Home</a></li>
               <li><a class="menu__link" id="nav_section2" href="#section2">How it works</a></li>
@@ -32,13 +32,9 @@
       </header>
 
       <main>
-        <!-- Each Section has an ID (used for the anchor) and 
-        a data attribute that will populate the li node.
-        Adding more sections will automatically populate nav.
-        The first section is set to active class by default -->
         <section id="section1" data-nav="Section 1">
           <!-- Slideshow container -->
-           <!-- https://html5css.ru/howto/howto_js_slideshow.php-->
+          <!-- https://html5css.ru/howto/howto_js_slideshow.php-->
           <div class="slideshow-container">
 
             <!-- Full-width images with number and caption text -->
@@ -96,34 +92,36 @@
                   </div>
                   <div class="row">
                     <div class="left-column"><label for="departure_date">Date:</label></div>
-                    <div class="right-column"><input type="text" id="departure_date"placeholder="MM/DD/YYYY" onfocus="(this.type='date')" onblur="(this.type='text')" /></div>
+                    <div class="right-column"><input type="text" id="departure_date" placeholder="MM/DD/YYYY" onfocus="(this.type='date')" onblur="(this.type='text')" /></div>
                   </div>
                   <div class="row">
                     <div class="left-column"></div>
-                    <div class="right-column"><input type="generate" value="Generate"></div>
+                    <div class="right-column"><button id="generate" type="submit">Generate</button></div>
                   </div>
                 </div>
               </div>
-            </div>
-            
+            </div> 
           </div>
         </section>
         <section id="section4" data-nav="Section 4">
           <div class="landing__container">
-            <h2>Section 4</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum metus faucibus lectus pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie semper in tellus. Sed congue et odio sed euismod.</p>
-            <div class="holder entry">
-              <div class="title">Most Recent Entry</div>
-              <div id="entryHolder">
-                <p>Date:</p>
-                <div id="date"></div>
-                <p>Temperature:</p>
-                <div id="temp"></div>
-                <p>Content:</p>
-                <div id="content"></div>
+            <div class="row">
+              <div class="column">
+                <h2>My trip</h2>
+                <div class="container">
+                  <div class="row">
+                    <div class="left-column"></div>
+                    <div class="right-column"></div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <p>Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.</p>
+              <div class="column">
+                <div class="trip_picture">
+                    <img id="trip_image" alt="My trip image" src="" style="width: 100%; height: 600px; object-fit: cover;">
+                    <figcaption id="trip_image_text"></figcaption>
+                </div>
+              </div>
+            </div> 
           </div>
         </section>
         <!--  https://www.w3schools.com/howto/howto_js_scroll_to_top.asp*/-->
@@ -212,7 +210,7 @@
     }
    </script>
    <!-- Link JS -->
-  <script src="js/app.js"></script>
+   <!-- <script src="js/app.js"></script>-->
   <!-- Get the button:-->
   <script>
     mybutton = document.getElementById("myBtn");

@@ -1,5 +1,5 @@
 /* Global Variables */
-
+const fetch = require('node-fetch');
 const baseURL = "http://api.openweathermap.org/data/2.5/weather?";
 const baseURLGeonames = "http://api.geonames.org/search?";
 const baseURLWeatherbit = "http://api.weatherbit.io/v2.0/current?";
