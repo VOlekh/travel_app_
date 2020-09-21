@@ -13,7 +13,7 @@ const apiWeatherbitKey = "fbfa2496a431462c93000bf275d3ca52";
 //import { performAction } from './js/fnPerformAction'
 //import { getData } from './js/fnGetData'
 //Import functions for Geonames API
-import { generateTripReport } from './js/fngenerateTripReport.js'
+import { generateTripReport } from './js/fnGenerateTripReport.js'
 import { getDataGeonames } from './js/fnGetDataGeonames.js'
 import { updateUI } from './js/fnUpdateUI'
 
