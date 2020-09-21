@@ -1,14 +1,9 @@
-// A function that puts new info on to the page
+// A function that puts trip info on to the page
+function updateUI(trip)
+{
+  document.getElementById("latitude").innerHTML = trip.latitude;
+  document.getElementById("pageURL").innerHTML = trip.pageURL;
+  document.getElementById("max_temp_ts").innerHTML = trip.max_temp_ts;
+  document.getElementById("min_temp_ts").innerHTML = trip.max_temp_ts;
 
-const updateUI = async () => {
-    const request = await fetch("http://localhost:8000/all");
-    try {
-      const allData = await request.json();
-      console.log(allData);
-      document.getElementById("date").innerHTML = allData.date;
-      document.getElementById("temp").innerHTML = allData.temperature;
-      document.getElementById("content").innerHTML = allData.feelings;
-    } catch (error) {
-      console.log("error", error);
-    }
-  };
+}
