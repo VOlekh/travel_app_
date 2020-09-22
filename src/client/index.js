@@ -28,9 +28,9 @@ function isInputValid()
 {
     const from_city_is_set = isTextElementValueSet("from_city")
     const to_city_is_set = isTextElementValueSet("to_city")
-    const departure_date_is_set = isTextElementValueSet("departure_date")
+    const start_date_is_set = isTextElementValueSet("start_date")
 
-    const all_elements_are_set = from_city_is_set && to_city_is_set && departure_date_is_set;
+    const all_elements_are_set = from_city_is_set && to_city_is_set && start_date_is_set;
     return all_elements_are_set
 }
 
