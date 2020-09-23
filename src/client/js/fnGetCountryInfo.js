@@ -9,7 +9,7 @@ const getDataPixabay = async (to_city) => {
      data = data.geonames[0];
      console.log(data);
      return{
-      name: data.Country,
+      name: data.country,
       region: data.region,
       subregion: data.subregion,
       population: data.population,

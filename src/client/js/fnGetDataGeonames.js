@@ -14,16 +14,18 @@ async function getDataGeonames(to_city) {
       const first_entry = data.geonames[0];
       console.log(first_entry);
       return {
-        latitude: first_entry.lat.slice(0,10),
-        longitude: first_entry.lng.slice(0,10),
+        latitude: first_entry.lat.slice(0,6),
+        longitude: first_entry.lng.slice(0,6),
+        countryName: first_entry.countryName,
       }
    } 
    catch (error) 
    {
-     console.log("error", error);
+     console.log("ERROR: No information for destination city.", error);
+     alert("ERROR: No information for destination city.");
    }
    
  };
 
- export { getDataGeonames }
+ export {getDataGeonames}
 
