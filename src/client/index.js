@@ -9,12 +9,12 @@ const apiKey = "26a266564be9e4c420e48fc2a76ce2ec&units=imperial";
 const apiGeonamesUsername = "volekh";
 const apiWeatherbitKey = "fbfa2496a431462c93000bf275d3ca52";
 
-//Import functions for OpenWeatherMap API
-//import { performAction } from './js/fnPerformAction'
-//import { getData } from './js/fnGetData'
-//Import functions for Geonames API
+
+//Import functions
 import { generateTripReport } from './js/fnGenerateTripReport.js'
 import { getDataGeonames } from './js/fnGetDataGeonames.js'
+import { getDataWeatherbit } from './js/fnGetDataWeatherbit.js'
+import { getDataPixabay } from './js/fnGetDataPixabay'
 import { updateUI } from './js/fnUpdateUI'
 
 import './styles/style.scss'
@@ -61,7 +61,5 @@ console.log("CHANGE!!");
 //Export functions
 export {
     generateTripReport,
-    getDataGeonames,
-    updateUI,
     enableGenerateTripReportButton,
    }

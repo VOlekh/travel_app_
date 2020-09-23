@@ -21,12 +21,13 @@ async function generateTripReport(event) {
     // the rest comment and check that ge is written in console log
 
     // call func to get weather in target city
-    // const weather = await getDataWeatherbit(geo.latitude, geo.longitude, trip.start_date, trip.end_date);
-    // trip.max_temp = weather.max_temp;
-    // trip.min_temp = weather.min_temp;
+
+    const weather = await getDataWeatherbit(geo.latitude, geo.longitude, trip.start_date, trip.end_date);
+    console.log(weather);
 
     //call get picture url
-    // const pictire = await getDataPixabay(baseURLPixabay, apiPixabayKey,to_city);
+    // const pictire = await getDataPixabay(trip.to_city);
+    // console.log(pictire);
 
     //call get flights data
 
@@ -38,3 +39,4 @@ async function generateTripReport(event) {
 }
 
 export {generateTripReport}
+
