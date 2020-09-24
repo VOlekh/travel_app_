@@ -24,13 +24,31 @@ function isTextElementValueSet(elementId)
     return document.getElementById(elementId).value != ""
 }
 
+  // The start date is in future or today?
+function isStartDateInFuture(date) {
+  var currentDate = new Date();
+//   return date > currentDate;
+//  (!isStartDateInFuture(date)) {
+//   alert ('ERROR: Date must not be in past');
+//   return false;
+//   }
+    if (date > currentDate) {
+        alert ('ERROR: Date must not be in past');
+    } else {
+        return true;
+    }
+}
+
+
 function isInputValid()
 {
     const from_city_is_set = isTextElementValueSet("from_city")
     const to_city_is_set = isTextElementValueSet("to_city")
     const start_date_is_set = isTextElementValueSet("start_date")
+   // call is start date in future function
+    const start_date_in_future = isStartDateInFuture("start_date")
 
-    const all_elements_are_set = from_city_is_set && to_city_is_set && start_date_is_set;
+    const all_elements_are_set = from_city_is_set && to_city_is_set && start_date_is_set && start_date_in_future;
     return all_elements_are_set
 }
 
@@ -39,6 +57,8 @@ function enableGenerateTripReportButton()
     const generate_report_button = document.getElementById("generate");
     generate_report_button.disabled = (!isInputValid());
 }
+
+
 
 // Event listener to add function to existing HTML DOM element
 //document.getElementById("generate").addEventListener("click", performAction);
