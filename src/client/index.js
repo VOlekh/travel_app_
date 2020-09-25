@@ -45,6 +45,14 @@ function calculateTripDays()
     return days_difference;
 }
 
+function calculateCountdown()
+{
+    var start_date = new Date();
+    var current_date = new Date();
+    var days_countdown = (start_date.getTime() - current_date.getTime())/ (1000 * 3600 * 24);
+    return days_countdown;
+
+}
 
 function isInputValid()
 {
@@ -83,7 +91,9 @@ document.getElementById("end_date").addEventListener('change', enableGenerateTri
 const trip_days= calculateTripDays("start_date", "end_date");
 console.log(trip_days);
 
-console.log("CHANGE!!");
+const trip_countdown = calculateCountdown("start_date", "current_date");
+console.log(trip_countdown);
+
 
 
 //Export functions

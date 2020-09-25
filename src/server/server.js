@@ -38,7 +38,7 @@ app.use(cors());
 // Spin up the server
 //Local server should be running and producing feedback to the Command Line
 
-const port = 3000;
+const port = 8000;
 const server = app.listen(port, listening);
 function listening() {
   console.log("server running");
@@ -62,9 +62,36 @@ app.post("/weather", function (request, response) {
   response.send("POST received");
 });
 
-// Initialize all route with a callback function
-// Callback function to complete GET '/all'
-// app.get("/all", sendData);
+const fetch = require("node-fetch");
+
+const getData = async url => {
+  try {
+    const response = await fetch(url);
+    const json = await response.json();
+    console.log(json);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const baseURLPixabay = "http://pixabay.com/api/?";
+const apiPixabayKey = "18393364-b93a8cbe009d33fa4364578e1";
+
+app.get("/picture", async (request, response) => {
+  const requestUriPixabay = `${baseURLPixabay}key=${apiPixabayKey}&q=${request.query.city}&image_type=photo`;
+  console.log(requestUriPixabay);
+  try {
+    const result = await fetch(requestUriPixabay);
+    const data = await result.json();
+    const entry = data.hits[0];
+    console.log(entry);
+    response.json({
+      pageURL: entry.pageURL,
+     });
+  } catch (error) {
+    console.log("error", error);
+  }
+});
 
 // function sendData(request, response) {
 //   response.send(projectData);
