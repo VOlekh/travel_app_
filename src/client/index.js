@@ -25,9 +25,10 @@ function isTextElementValueSet(elementId)
 }
 
 // The start date is in future or today?
-function isStartDateInFutureOrNow(start_date, current_date) 
+function isStartDateInFutureOrNow(start_date) 
 {
-  var currentDate = new Date();
+  var current_date = new Date();
+  var start_date  = new Date();
 //   alert ('ERROR: Date must not be in past');
     if (start_date >= current_date ) 
     {
@@ -37,7 +38,7 @@ function isStartDateInFutureOrNow(start_date, current_date)
     }
 }
 
-function calculateTripDays()
+function calculateTripDays(start_date, end_date)
 {
     var start_date = new Date();
     var end_date = new Date();
@@ -45,7 +46,7 @@ function calculateTripDays()
     return days_difference;
 }
 
-function calculateCountdown()
+function calculateCountdown(start_date)
 {
     var start_date = new Date();
     var current_date = new Date();
@@ -61,7 +62,7 @@ function isInputValid()
     const start_date_is_set = isTextElementValueSet("start_date")
    // call is start date in future function
   
-    const start_date_in_future = isStartDateInFutureOrNow("start_date", "current_date")
+    const start_date_in_future = isStartDateInFutureOrNow("start_date")
    // collect all check parameters with and
     const all_elements_are_set = from_city_is_set && to_city_is_set && start_date_is_set && start_date_in_future;
     return all_elements_are_set
@@ -91,7 +92,7 @@ document.getElementById("end_date").addEventListener('change', enableGenerateTri
 const trip_days= calculateTripDays("start_date", "end_date");
 console.log(trip_days);
 
-const trip_countdown = calculateCountdown("start_date", "current_date");
+const trip_countdown = calculateCountdown("start_date");
 console.log(trip_countdown);
 
 
