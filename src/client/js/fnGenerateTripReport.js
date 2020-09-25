@@ -1,6 +1,7 @@
 // collect data from all apis and call function that update apis 
 const { getDataWeatherbit } = require("./fnGetDataWeatherbit");
-import { getDataGeonames} from './fnGetDataGeonames'
+import { getDataGeonames} from './fnGetDataGeonames';
+import { getDataPixabay } from './fnGetDataPixabay';
 
 // Function called by event listener (named call back function)
 async function generateTripReport(event) {
@@ -26,8 +27,8 @@ async function generateTripReport(event) {
     console.log(weather);
 
     //call get picture url
-    // const pictire = await getDataPixabay(trip.to_city);
-    // console.log(pictire);
+    const pictire = await getDataPixabay(trip.to_city);
+    console.log(pictire);
 
     //call get flights data
 

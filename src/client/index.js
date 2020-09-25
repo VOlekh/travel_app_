@@ -24,19 +24,25 @@ function isTextElementValueSet(elementId)
     return document.getElementById(elementId).value != ""
 }
 
-  // The start date is in future or today?
-function isStartDateInFuture(date) {
+// The start date is in future or today?
+function isStartDateInFutureOrNow(start_date, current_date) 
+{
   var currentDate = new Date();
-//   return date > currentDate;
-//  (!isStartDateInFuture(date)) {
 //   alert ('ERROR: Date must not be in past');
-//   return false;
-//   }
-    if (date > currentDate) {
-        alert ('ERROR: Date must not be in past');
+    if (start_date >= current_date ) 
+    {
+       return true;
     } else {
-        return true;
+        return false;
     }
+}
+
+function calculateTripDays()
+{
+    var start_date = new Date();
+    var end_date = new Date();
+    var days_difference = (end_date.getTime() - start_date.getTime())/ (1000 * 3600 * 24);
+    return days_difference;
 }
 
 
@@ -46,8 +52,9 @@ function isInputValid()
     const to_city_is_set = isTextElementValueSet("to_city")
     const start_date_is_set = isTextElementValueSet("start_date")
    // call is start date in future function
-    const start_date_in_future = isStartDateInFuture("start_date")
-
+  
+    const start_date_in_future = isStartDateInFutureOrNow("start_date", "current_date")
+   // collect all check parameters with and
     const all_elements_are_set = from_city_is_set && to_city_is_set && start_date_is_set && start_date_in_future;
     return all_elements_are_set
 }
@@ -73,13 +80,15 @@ document.getElementById("start_date").addEventListener('change', enableGenerateT
 document.getElementById("end_date").addEventListener('change', enableGenerateTripReportButton)
 
 
-//console.log(performAction);
+const trip_days= calculateTripDays("start_date", "end_date");
+console.log(trip_days);
 
 console.log("CHANGE!!");
 
 
 //Export functions
-export {
+export 
+{
     generateTripReport,
     enableGenerateTripReportButton,
-   }
+}

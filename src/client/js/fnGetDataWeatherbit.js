@@ -41,9 +41,8 @@ async function getDataWeatherbit(latitude, longitude, start_date) {
    const response = await fetch(requestUriWeatherbit);
    try{
      const result = await response.json();
-    console.log(result)
+     console.log(result)
      const weather_data = result.data[0];
-    //  console.log(second_entry);
      return{
        max_temp: weather_data.max_temp,
        min_temp: weather_data.min_temp,
