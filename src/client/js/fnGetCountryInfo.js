@@ -1,20 +1,23 @@
+
 //Function to get country info, works with restcountries api
 const baseURLRestcountries = "https://restcountries.eu/rest/v2/name/";
 
-const getDataPixabay = async (to_city) => {
-   const requestUriRestcountries = `${baseURLRestcountries}${to_city}`;
+async function getCountryInfo(countryName) {
+   const requestUriRestcountries = `${baseURLRestcountries}${countryName}`;
+   console.log(requestUriRestcountries);
    const response = await fetch(requestUriRestcountries);
    try {
-     const data = await response.json();
-     data = data.geonames[0];
-     console.log(data);
-     return{
-      name: data.country,
-      region: data.region,
-      subregion: data.subregion,
-      population: data.population,
-      currencies: data.currencies,
-      flag: data.flag_url,      
+      const data = await response.json();
+      const info = data[0];
+      console.log(info);
+      return {
+        country: info.name,
+        capital: info.capital,
+        region: info.region,
+        subregion: info.subregion,
+        population: info.population,
+        currencies: info.currencies,
+        flag: info.flag,      
      }
    } catch (error) {
      console.log("error", error);
@@ -22,3 +25,4 @@ const getDataPixabay = async (to_city) => {
    
  };
 
+ export {getCountryInfo}

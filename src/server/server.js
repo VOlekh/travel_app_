@@ -63,17 +63,6 @@ app.post("/weather", function (request, response) {
 });
 
 const fetch = require("node-fetch");
-
-const getData = async url => {
-  try {
-    const response = await fetch(url);
-    const json = await response.json();
-    console.log(json);
-  } catch (error) {
-    console.log(error);
-  }
-};
-
 const baseURLPixabay = "http://pixabay.com/api/?";
 const apiPixabayKey = "18393364-b93a8cbe009d33fa4364578e1";
 
@@ -86,7 +75,7 @@ app.get("/picture", async (request, response) => {
     const entry = data.hits[0];
     console.log(entry);
     response.json({
-      pageURL: entry.pageURL,
+      imageURL: entry.largeImageURL,
      });
   } catch (error) {
     console.log("error", error);

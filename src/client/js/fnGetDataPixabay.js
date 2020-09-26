@@ -1,23 +1,16 @@
-//Function to get Pictures works with Pixabay api
-const baseURLPixabay = "http://pixabay.com/api/?";
-const proxyURLCors = "https://cors-anywhere.herokuapp.com/";
-const apiPixabayKey = "18393364-b93a8cbe009d33fa4364578e1";
+//Function to send  and receive picture from lockal server. Lockal server wirks with api
+const baseURLLocalServer = "http://localhost:8000/picture";
 
-async function getDataPixabay(to_city) {
-   const requestUriPixabay = `${proxyURLCors}${baseURLPixabay}key=${apiPixabayKey},&q=${to_city}&image_type=photo`;
-   console.log(requestUriPixabay);
-   const response = await fetch(requestUriPixabay);
+async function getPictureFromLocalServer(to_city) {
+   const requestUri = `${baseURLLocalServer}?city=${to_city}`;
+   console.log(requestUri);
+   const response = await fetch(requestUri);
    try {
      const data = await response.json();
-     const entry = data.pixabay[0];
-     console.log(entry);
-     return{
-      pageURL:  entry.pageURL,
-     }
+     return data;
    } catch (error) {
      console.log("error", error);
    }
-   
 };
 
-export {getDataPixabay};
+export { getPictureFromLocalServer };

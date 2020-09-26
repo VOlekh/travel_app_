@@ -28,9 +28,8 @@ function isTextElementValueSet(elementId)
 function isStartDateInFutureOrNow(start_date) 
 {
   var current_date = new Date();
-  var start_date  = new Date();
 //   alert ('ERROR: Date must not be in past');
-    if (start_date >= current_date ) 
+    if (start_date.getTime() >= current_date.getTime()) 
     {
        return true;
     } else {
@@ -38,22 +37,7 @@ function isStartDateInFutureOrNow(start_date)
     }
 }
 
-function calculateTripDays(start_date, end_date)
-{
-    var start_date = new Date();
-    var end_date = new Date();
-    var days_difference = (end_date.getTime() - start_date.getTime())/ (1000 * 3600 * 24);
-    return days_difference;
-}
 
-function calculateCountdown(start_date)
-{
-    var start_date = new Date();
-    var current_date = new Date();
-    var days_countdown = (start_date.getTime() - current_date.getTime())/ (1000 * 3600 * 24);
-    return days_countdown;
-
-}
 
 function isInputValid()
 {
@@ -61,8 +45,12 @@ function isInputValid()
     const to_city_is_set = isTextElementValueSet("to_city")
     const start_date_is_set = isTextElementValueSet("start_date")
    // call is start date in future function
-  
-    const start_date_in_future = isStartDateInFutureOrNow("start_date")
+    // change string in to date
+    const start_date_str = document.getElementById("start_date").value;
+    const start_date_td = new Date(start_date_str)
+    // console.log(start_date_td)
+    //use as parameter date = type date
+    const start_date_in_future = isStartDateInFutureOrNow(start_date_td);
    // collect all check parameters with and
     const all_elements_are_set = from_city_is_set && to_city_is_set && start_date_is_set && start_date_in_future;
     return all_elements_are_set
@@ -87,13 +75,6 @@ document.getElementById("from_city").addEventListener('change', enableGenerateTr
 document.getElementById("to_city").addEventListener('change', enableGenerateTripReportButton)
 document.getElementById("start_date").addEventListener('change', enableGenerateTripReportButton)
 document.getElementById("end_date").addEventListener('change', enableGenerateTripReportButton)
-
-
-const trip_days= calculateTripDays("start_date", "end_date");
-console.log(trip_days);
-
-const trip_countdown = calculateCountdown("start_date");
-console.log(trip_countdown);
 
 
 

@@ -1,42 +1,41 @@
 // collect data from all apis and call function that update apis 
 const { getDataWeatherbit } = require("./fnGetDataWeatherbit");
 import { getDataGeonames} from './fnGetDataGeonames';
-import { getDataPixabay } from './fnGetDataPixabay';
+import { getPictureFromLocalServer } from './fnGetDataPixabay';
+import { getCountryInfo} from './fnGetCountryInfo';
+import { updateUI } from './fnUpdateUI'
 
 // Function called by event listener (named call back function)
 async function generateTripReport(event) {
-    console.log("Hello");
     // object containing all trip data
     let trip = {
         to_city: document.getElementById("to_city").value,
         from_city: document.getElementById("from_city").value,
-        start_date: document.getElementById("start_date").value,
-        end_date: document.getElementById("end_date").value
+        start_date: new Date(document.getElementById("start_date").value),
+        end_date: new Date(document.getElementById("end_date").value)
     };
-
-    console.log(trip.end_date);
       
     // call get latitude / longitude
     const geo = await getDataGeonames(trip.to_city);
-    console.log(geo);
-    // the rest comment and check that ge is written in console log
+    // console.log(geo);
 
     // call func to get weather in target city
-
     const weather = await getDataWeatherbit(geo.latitude, geo.longitude, trip.start_date, trip.end_date);
-    console.log(weather);
+    // console.log(weather);
 
     //call get picture url
-    const pictire = await getDataPixabay(trip.to_city);
-    console.log(pictire);
+    const picture_data = await getPictureFromLocalServer(trip.to_city);
+    console.log(picture_data.imageURL);
+    const pictureUrl = picture_data.imageURL;
 
-    //call get flights data
+    //call get country info function
+    const country_info = await getCountryInfo(geo.countryName);
+    console.log(country_info);
 
-    // put all needed data into trip
-    // etc
+    // call get flights data
 
     // show all trip data on UI
-    // updateUI(trip);
+    updateUI(trip, weather, pictureUrl, country_info);
 }
 
 export {generateTripReport}
