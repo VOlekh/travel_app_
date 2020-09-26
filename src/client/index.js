@@ -38,7 +38,7 @@ function isStartDateInFutureOrNow(start_date)
 }
 
 
-
+// Validate input
 function isInputValid()
 {
     const from_city_is_set = isTextElementValueSet("from_city")
@@ -64,9 +64,7 @@ function enableGenerateTripReportButton()
 
 
 
-// Event listener to add function to existing HTML DOM element
-//document.getElementById("generate").addEventListener("click", performAction);
-// Event listener to add function to existing HTML DOM element for Geonames
+// Generate button event listener 
 const generate_report_button = document.getElementById("generate")
 generate_report_button.addEventListener("click", generateTripReport);
 generate_report_button.disabled = true

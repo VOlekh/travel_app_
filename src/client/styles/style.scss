@@ -2,7 +2,7 @@ body {
 	background: #fffff8;
 	font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 	margin: auto;
-	background: #AC4261;
+	background: hsla(246, 21%, 17%, 0.898);
 	color: #2b2923;
 	text-align: center;
 }
@@ -39,6 +39,9 @@ body {
 #temp {
 }
 #content {
+}
+#white_section_name {
+	color: white;
 }
 
 .header {
@@ -226,8 +229,8 @@ h2{
 	display: inline-block;
 	width: 20ex;
 	text-align: left;
-	padding: 30px 30px 0px 30px;
-	margin: 15px 15px 0px 15px;
+	padding: 15px 0px 0px 30px;
+	margin: 0px 15px 0px 15px;
 }
 
 .right-column {
@@ -272,21 +275,39 @@ input[type=text], select, textarea {
 	font-family: 'Oswald', sans-serif;
 }
 
-button[type=submit] {
-    background-color: #126094;
-	margin-top: 60px;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-	cursor: pointer;
-	text-align: center;
+
+
+#generate{
+	appearance: button;
+	background-color: #126094;
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: white;
+    text-align: center;
+    align-items: flex-start;
+	margin: 0em;
 	width: 100%;
-	color: white;
-	font-size: 25px;
-	font-family: 'Oswald', sans-serif;
+	cursor: pointer;
+    font: 20px Oswald;
+    padding: 1px 6px;
+    border-style: outset;
+	border: 1px solid #ccc; 
+	border-radius: 4px;
+  
 }
 
-button[type=submit] :hover {
+
+.btn-disable{
+cursor: not-allowed;
+pointer-events: none;
+/*Button disabled - CSS color class*/
+border: 1px solid #999999;
+background-color: #cccccc;
+color: #666666;
+}
+
+
+#generate :hover {
     background-color: #106877;
 }
 input[type="text"]::-webkit-input-placeholder {
