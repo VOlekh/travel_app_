@@ -32,13 +32,16 @@ function updateUI(trip, weather, pictureUrl, country_info) {
 //Call calculate trip countdown
   const trip_countdown = calculateCountdown(start_date_td);
   console.log("Trip countdown:", Math.floor(trip_countdown));
-  document.getElementById("countdown").innerHTML = Math.floor(trip_countdown);
+  //document.getElementById("countdown").innerHTML = Math.floor(trip_countdown);
 
-  var output = document.getElementsByClassName("output")[0],
-    newdiv = document.createElement("div"); //create a div
-  newdiv.id = "newdiv"; //add an id
-  output.appendChild(newdiv); //append to the doc.body
-  output.insertBefore(newdiv, output.firstChild); //OR insert it
+  var output = document.getElementsByClassName("output")[0];
+  console.log(output);
+  var new_h2 = document.createElement("h2"); //create h2
+  new_h2.id = "my_trip"; //add an id
+  new_h2.itextContent = 'My trip';
+  //document.getElementById("my_trip").innerHTML = "My trip";
+  output.appendChild(new_h2); //append to the doc.body
+  //output.insertBefore(new_h2, output.firstChild); //OR insert it
 }
 
 export { updateUI };
