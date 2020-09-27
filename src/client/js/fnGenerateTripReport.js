@@ -8,7 +8,7 @@ import { updateUI } from "./fnUpdateUI";
 // Function called by event listener (named call back function)
 async function generateTripReport(event) {
   // object containing all trip data
-  let trip = {
+  var trip = {
     to_city: document.getElementById("to_city").value,
     from_city: document.getElementById("from_city").value,
     start_date: new Date(document.getElementById("start_date").value),

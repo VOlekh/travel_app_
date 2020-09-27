@@ -49,9 +49,8 @@ body {
 
 .trip_initial_text{
 	margin-top: 200px;
-	line-height: normal;
-    display: inline-block;
-    vertical-align: middle;
+	margin-bottom: 200px;
+	padding: 160px 40px 40px 40px;
 	font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
@@ -66,7 +65,7 @@ body {
 }
 section {
 	position: relative;
-	min-height: 70vh;
+	//min-height: 70vh;
 
   }
 #section2 {
@@ -76,21 +75,38 @@ section {
 	background-color: white;
   }
 
+
+.output {
+	margin: 10px;
+} 
 /*Section 3 formatting*/
+section{
+
+}
+
 .row {
-	display: flex;
+	
+	display: flexbox ;
 }
 
 .column {
-	flex: 50%;
-	height: 600px;
+//	flex: 50%;
+// 	height: 600px;
 }
-/* Responsive layout */
-@media screen and (max-width: 300px) {
-    .column {
-		width: 100%;	 
-	}
-}
+// /* Responsive layout small screen */
+// @media only screen and (max-width: 480px) {
+ 
+// 	#section1{
+// 		height: auto;
+// 	}
+// 	.column {
+// 		//flex: 50%;
+// 		height: 600px;
+// 	}
+// 	.row{
+// 		display: flex;
+// 	}
+// }
 /*--------------------*/
 
 
@@ -302,6 +318,7 @@ input[type=text], select, textarea {
     text-align: center;
     align-items: flex-start;
 	margin: 0em;
+	margin-bottom: 20px;
 	width: 100%;
 	cursor: pointer;
     font: 20px Oswald;
