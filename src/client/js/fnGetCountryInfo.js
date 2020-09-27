@@ -15,7 +15,7 @@ async function getCountryInfo(countryName) {
       region: info.region,
       subregion: info.subregion,
       population: info.population,
-      currencies: info.currencies,
+      currency: info.currencies[0],
       flag: info.flag,
     };
   } catch (error) {
