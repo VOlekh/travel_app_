@@ -37,7 +37,7 @@
           <!-- https://html5css.ru/howto/howto_js_slideshow.php-->
           <div class="slideshow-container">
 
-            <!-- Full-width images. Links for pictures take from dalf made project on wix -->
+            <!-- Full-width images. Links for pictures take from self made project on wix -->
             <div class="mySlides fade">
               <img src="https://static.wixstatic.com/media/d9520aafca774fbeb056dc8d62085362.jpg/v1/fill/w_1192,h_575,al_c,q_85,usm_0.66_1.00_0.01/d9520aafca774fbeb056dc8d62085362.jpg" style="width:100%; height: 100%; object-fit: cover">
             </div>
@@ -79,7 +79,7 @@
             </div>
           </div>
           
-          
+       <!-- images are taken from self made web site on wix --> 
         </section>
         <section id="section3" data-nav="Section 3">
           <div class="landing__container">
@@ -89,6 +89,7 @@
               </div>
               <div class="column">
                 <h2 id="white_section_name">I'm traveling to</h2>
+                <p class="user_tip">Please fill in all fields, choose the departure date in future.</p>
                 <div class="container">
                   <div class="row">
                     <div class="left-column"><label for="from_city">From:</label></div>
@@ -129,7 +130,7 @@
               </div>
               <div class="column">
                 <div class="trip_picture">
-                    <img id="trip_image" alt="My trip image" src="https://pixabay.com/get/57e8d4404d51ad14f6da8c7dda7936761636dde655556c48732f7ad6944cc15eb8_1280.jpg" style="width: 100%; height: 600px; object-fit: cover;">
+                    <img id="trip_image" alt="My trip image" src="https://pixabay.com/get/57e8d344485aa914f6da8c7dda7936761636dde655556c48732f7ad7954dc059bd_1280.jpg" style="width: 100%; height: 600px; object-fit: cover;">
                     <figcaption id="trip_image_text"></figcaption>
                 </div>
               </div>
@@ -234,78 +235,5 @@
       document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     }
   </script>
- 
-  <script>
-    //Add in services workers.
-    const fetch = require("node-fetch");
-    //Import functions
-    import { generateTripReport } from "./js/fnGenerateTripReport.js";
-    import "./styles/style.scss";
-
-    function isTextElementValueSet(elementId) {
-      return document.getElementById(elementId).value != "";
-    }
-
-    //The start date is in future or today?
-    function isStartDateInFutureOrNow(start_date) {
-      var current_date = new Date();
-      //   alert ('ERROR: Date must not be in past');
-      if (start_date.getTime() >= current_date.getTime()) {
-        return true;
-      } else {
-        return false;
-      }
-    }
-
-    //Validate input
-    function isInputValid() {
-      const from_city_is_set = isTextElementValueSet("from_city");
-      const to_city_is_set = isTextElementValueSet("to_city");
-      const start_date_is_set = isTextElementValueSet("start_date");
-      // call is start date in future function
-      // change string in to date
-      const start_date_str = document.getElementById("start_date").value;
-      const start_date_td = new Date(start_date_str);
-      // console.log(start_date_td)
-      // use as parameter date = type date
-      const start_date_in_future = isStartDateInFutureOrNow(start_date_td);
-      // collect all check parameters with and
-      const all_elements_are_set =
-        from_city_is_set &&
-        to_city_is_set &&
-        start_date_is_set &&
-        start_date_in_future;
-      return all_elements_are_set;
-    }
-
-    function enableGenerateTripReportButton() {
-      const generate_report_button = document.getElementById("generate");
-      generate_report_button.disabled = !isInputValid();
-    }
-
-    //Generate button event listener
-    const generate_report_button = document.getElementById("generate");
-    generate_report_button.addEventListener("click", Client.generateTripReport);
-    //Generate_report_button.addEventListener("click", testUIGeneration);
-
-    generate_report_button.disabled = true;
-
-    document
-      .getElementById("from_city")
-      .addEventListener("change", enableGenerateTripReportButton);
-    document
-      .getElementById("to_city")
-      .addEventListener("change", enableGenerateTripReportButton);
-    document
-      .getElementById("start_date")
-      .addEventListener("change", enableGenerateTripReportButton);
-    document
-      .getElementById("end_date")
-      .addEventListener("change", enableGenerateTripReportButton);
-
-    //Export functions
-    export { generateTripReport, enableGenerateTripReportButton };
-  </script>
-
 
 </html>

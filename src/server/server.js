@@ -1,6 +1,3 @@
-// Setup empty JS object to act as endpoint for all routes
-projectData = {};
-
 // Require Express to run server and routes
 //The project file server.js should require express()
 const express = require("express");
@@ -13,10 +10,7 @@ const app = express();
 app.use(express.static('dist'));
 console.log(__dirname)
 
-app.get('/', function (req, res) {
-  console.log("Hello!")
-  res.sendFile('dist/index.html')
-})
+
 
 /* Middleware*/
 //The body-parser package should be installed and included in the project.
@@ -45,23 +39,6 @@ function listening() {
   console.log(`running on localhost: ${port}`);
 }
 
-
-// After that test your server by typing in terminal node starter.js
-
-// Callback to debug
-
-// Post method Route
-// app.post('/', function (request, response) {
-//     res.send('POST received')
-//   });
-//Add a POST route for adding a weather via the path ’/weather’ to an array named data. Create the array as well.
-const data = [];
-app.post("/weather", function (request, response) {
-  console.log(request.body);
-  projectData = request.body;
-  response.send("POST received");
-});
-
 const fetch = require("node-fetch");
 const baseURLPixabay = "http://pixabay.com/api/?";
 const apiPixabayKey = "18393364-b93a8cbe009d33fa4364578e1";
@@ -81,3 +58,8 @@ app.get("/picture", async (request, response) => {
     console.log("error", error);
   }
 });
+
+app.get('/', function (req, res) {
+  console.log("Hello!")
+  res.sendFile('dist/index.html')
+})
