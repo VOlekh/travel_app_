@@ -21,17 +21,17 @@ A custom travel app requires to create an asynchronous web app that uses Web API
 
 
 ## APIs Required
-- Geonames API getting longitude and latitude of searched lockation, entered by a user.
+- Geonames API getting longitude and latitude of searched location, entered by a user.
     - http://api.geonames.org/searchJSON?formatted=true&q=CITY&username=USERNAME&style=full
 
-- Weatherbit API for Historical Weather Forecasts
+- Weatherbit API used for Historical Weather Forecasts.
 uses latitude and longitude information from previous API
     - https://api.weatherbit.io/v2.0/current?city=Raleigh,NC&key=API_KEY
 
-- Pixabay API for return pictures for searched location
+- Pixabay API returns pictures for searched location.
     - https://pixabay.com/api/?key=API_KEY&q=PLACE&image_type=photo
 
-- Rest Countries for Country Information
+- Rest Countries sends back Country Information.
     - https://restcountries.eu/rest/v2/name/{name}
 
 
