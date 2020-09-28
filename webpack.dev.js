@@ -27,4 +27,8 @@ module.exports = {
             filename: "./index.html"
         })
     ],
+    output: {
+        libraryTarget: 'var',
+        library: 'Client'
+    },
 }

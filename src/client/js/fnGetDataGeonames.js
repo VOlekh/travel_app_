@@ -1,4 +1,4 @@
-//Function to get longitude and latitude
+//Function to get longitude and latitude from api
 const baseURLGeonames = "http://api.geonames.org/searchJSON?";
 const apiGeonamesUsername = "volekh";
 

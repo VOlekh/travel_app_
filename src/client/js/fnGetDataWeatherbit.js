@@ -6,7 +6,7 @@ const proxyURLCors = "https://cors-anywhere.herokuapp.com/";
 const apiWeatherbitKey = "fbfa2496a431462c93000bf275d3ca52";
 
 // Format date in to YYYY-MM-DD
-// from https://stackoverflow.com/questions/23593052/format-javascript-date-as-yyyy-mm-dd
+// From https://stackoverflow.com/questions/23593052/format-javascript-date-as-yyyy-mm-dd
 function formatDate(d) {
   var month = "" + (d.getMonth() + 1);
   var day = "" + d.getDate();
@@ -22,7 +22,7 @@ async function getDataWeatherbit(latitude, longitude, start_date) {
   var plus_one_day = new Date(start_date);
   plus_one_day.setDate(plus_one_day.getDate() + 1);
 
-  //call Format date function
+  //Call Format date function
   const start_date_formatted = formatDate(start_date);
   const plus_one_day_formatted = formatDate(plus_one_day);
 

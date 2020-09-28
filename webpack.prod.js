@@ -6,6 +6,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
     entry: './src/client/index.js',
+    
+  
 
     module: {
         rules: [
@@ -26,4 +28,9 @@ module.exports = {
             filename: "./index.html"
         })
     ],  
+    output: {
+        libraryTarget: 'var',
+        library: 'Client'
+    },
+  
 }

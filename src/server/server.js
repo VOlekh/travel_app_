@@ -38,7 +38,7 @@ app.use(cors());
 // Spin up the server
 //Local server should be running and producing feedback to the Command Line
 
-const port = 8000;
+const port = 8081;
 const server = app.listen(port, listening);
 function listening() {
   console.log("server running");
@@ -81,7 +81,3 @@ app.get("/picture", async (request, response) => {
     console.log("error", error);
   }
 });
-
-// function sendData(request, response) {
-//   response.send(projectData);
-// }
