@@ -29,7 +29,7 @@ app.use(cors());
 // Spin up the server
 //Local server should be running and producing feedback to the Command Line
 
-const port = 8080;
+const port = 8000;
 const server = app.listen(port, listening);
 function listening() {
   console.log("server running");
@@ -37,7 +37,7 @@ function listening() {
 }
 
 const fetch = require("node-fetch");
-const baseURLPixabay = "http://pixabay.com/api/?";
+const baseURLPixabay = "https://pixabay.com/api/?";
 const apiPixabayKey = "18393364-b93a8cbe009d33fa4364578e1";
 
 app.get("/picture", async (request, response) => {
@@ -56,9 +56,9 @@ app.get("/picture", async (request, response) => {
   }
 });
 
-app.get("/", function (req, res) {
-  console.log("Hello!");
-  res.sendFile("dist/index.html");
-});
+// app.get("/", function (req, res) {
+//   console.log("Hello!");
+//   res.sendFile("dist/index.html");
+// });
 
- export{app}
+ //export{app}
