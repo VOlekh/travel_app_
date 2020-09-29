@@ -1,7 +1,7 @@
 // Import functions
 import { generateTripReport } from "./js/fnGenerateTripReport.js";
 import { isInputValid } from "./js/validation"
-
+import { topFunction, plusSlides, currentSlide } from "./js/designStyling"; 
 import "./styles/style.scss";
 
 function enableGenerateTripReportButton() {
@@ -28,4 +28,4 @@ document
   .addEventListener("change", enableGenerateTripReportButton);
 
 //Export functions
-export { generateTripReport, enableGenerateTripReportButton };
+export { topFunction, plusSlides, currentSlide };

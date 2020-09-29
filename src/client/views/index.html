@@ -51,16 +51,16 @@
             </div>
 
             <!-- Next and previous buttons -->
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <a class="prev" onclick="Client.plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="Client.plusSlides(1)">&#10095;</a>
           </div>
           <br>
 
           <!-- The dots/circles -->
           <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="Client.currentSlide(1)"></span>
+            <span class="dot" onclick="Client.currentSlide(2)"></span>
+            <span class="dot" onclick="Client.currentSlide(3)"></span>
           </div>
 
         </section>
@@ -139,7 +139,7 @@
         </section>
         <!--  https://www.w3schools.com/howto/howto_js_scroll_to_top.asp*/-->
         <!-- Create a button that will take the user to the top of the page when clicked on -->
-        <button  class="fa fa-home" onclick="topFunction()" id="myBtn" title="Back to top"></i></button>
+        <button  class="fa fa-home" onclick="Client.topFunction()" id="myBtn" title="Back to top"></i></button>
       </main>
 
       <footer>
@@ -163,7 +163,15 @@
     </div>
 
       <!-- Link JS -->
-      <script src='src/client/js/designStyling.js'></script>
+      <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+          // Use the window load event to keep the page load performant
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js');
+          });
+        }
+        </script>
       
   </body>
 </html>
