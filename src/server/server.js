@@ -7,10 +7,8 @@ const express = require("express");
 //The project file server.js should create an instance of their app using express.
 //update your server js to access the dist folder
 const app = express();
-app.use(express.static('dist'));
-console.log(__dirname)
-
-
+app.use(express.static("dist"));
+console.log(__dirname);
 
 /* Middleware*/
 //The body-parser package should be installed and included in the project.
@@ -18,7 +16,6 @@ const bodyParser = require("body-parser");
 //Here we are configuring express to use body-parser as middle-ware.
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
 
 // Cors for cross origin allowance
 //The instance of the app should be setup to use cors()
@@ -53,13 +50,15 @@ app.get("/picture", async (request, response) => {
     console.log(entry);
     response.json({
       imageURL: entry.largeImageURL,
-     });
+    });
   } catch (error) {
     console.log("error", error);
   }
 });
 
-app.get('/', function (req, res) {
-  console.log("Hello!")
-  res.sendFile('dist/index.html')
-})
+app.get("/", function (req, res) {
+  console.log("Hello!");
+  res.sendFile("dist/index.html");
+});
+
+ export{app}
