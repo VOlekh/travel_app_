@@ -22,20 +22,6 @@ app.use(bodyParser.json());
 const cors = require("cors");
 app.use(cors());
 
-//NOT AS IT IS NOW The Express app instance should be pointed to the project folder with .html, .css, and .js files.
-// Initialize the main project folder
-//app.use(express.static("website"));
-
-// Spin up the server
-//Local server should be running and producing feedback to the Command Line
-
-const port = 8080;
-const server = app.listen(port, listening);
-function listening() {
-  console.log("server running");
-  console.log(`running on localhost: ${port}`);
-}
-
 const fetch = require("node-fetch");
 const baseURLPixabay = "https://pixabay.com/api/?";
 const apiPixabayKey = "18393364-b93a8cbe009d33fa4364578e1";
@@ -56,9 +42,15 @@ app.get("/picture", async (request, response) => {
   }
 });
 
-// app.get("/", function (req, res) {
-//   console.log("Hello!");
-//   res.sendFile("dist/index.html");
-// });
+app.get("/", async function (req, res) {
+  res.sendFile("dist/index.html");
+});
 
- //export{app}
+const port = 8000;
+const server = app.listen(port, listening);
+function listening() {
+  console.log("server running");
+  console.log(`running on localhost: ${port}`);
+}
+
+module.exports = {app}

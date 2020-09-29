@@ -24,6 +24,7 @@
     "express": "^4.17.1",
     "html-loader": "^1.2.1",
     "node": "^14.12.0",
+    "node-fetch": "^2.6.1",
     "serviceworker-cache-polyfill": "^4.0.0",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
@@ -52,5 +53,11 @@
     "tape": "^5.0.1",
     "terser-webpack-plugin": "^4.1.0",
     "test": "^0.6.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   }
 }
