@@ -1,6 +1,6 @@
 //https://zellwk.com/blog/endpoint-testing/
-//import  { app } from '../server.js';
-const app = require('./server.js') // Link to your server file
+import  { app } from './server';
+//const app = require('./server.js') // Link to your server file
 const supertest = require('supertest');
 const { response } = require('express');
 const request = supertest(app)
